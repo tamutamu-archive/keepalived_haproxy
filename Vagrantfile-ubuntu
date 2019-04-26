@@ -10,6 +10,18 @@ Vagrant.configure("2") do |config|
   #  config.proxy.https    = ""
   #  config.proxy.no_proxy = "localhost,127.0.0.1"
   #end
+  
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    config.proxy.http     = ""
+    config.proxy.https    = ""
+    config.proxy.no_proxy = "localhost,127.0.0.1"
+  end
+  
+  #if Vagrant.has_plugin?("vagrant-proxyconf")
+  #  config.proxy.http     = ""
+  #  config.proxy.https    = ""
+  #  config.proxy.no_proxy = ""
+  #end
 
   config.vm.define :lvs1 do |lvs1|
     lvs1.vm.box = "ubuntu/bionic64"

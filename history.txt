@@ -1,0 +1,123 @@
+    1  vi /etc/kek
+    2  vi /etc/keepalived/keepalived.conf 
+    3  ps aux | grep keep
+    4  systemctl start keepalived.service 
+    5  ip a
+    6  history
+    7  ipvsadm -Lnc
+    8  ps aux | grep ipvs
+    9  vi /etc/keepalived/keepalived.conf 
+   10  ipvsadm --stat-daemon eth1 --sync-id 10
+   11  ipvsadm -h
+   12  ipvsadm --stat-daemon backup eth1 --syncid 10
+   13  ipvsadm --start-daemon backup eth1 --syncid 10
+   14  ipvsadm --start-daemon backup --syncid 10
+   15  ip a
+   16  ipvsadm -L --daemon
+   17  ipvsadm -Lnc
+   18  ipvsadm -L --daemon
+   19  ip a
+   20  ipvsadm --start-daemon backup --syncid 10 --mcast-interface eth1
+   21  ipvsadm --start-daemon backup --syncid 20 --mcast-interface eth1
+   22  ip a
+   23  ipvsadm --start-daemon backup --syncid 20 --mcast-interface eth0
+   24  ipvsadm --start-daemon backup --mcast-interface eth0
+   25  ipvsadm --start-daemon backup --mcast-interface eth1
+   26  ipvsadm --start-daemon backup --mcast-interface=eth0
+   27  ipvsadm --start-daemon backup --mcast-interface eth
+   28  ipvsadm --start-daemon backup --mcast-interface eth1:
+   29  ipvsadm -L
+   30  ipvsadm -Lnc
+   31  ipvsadm --start-daemon backup --mcast-interface eth1
+   32  ipvsadm --start-daemon master --mcast-interface eth1
+   33  ip a
+   34  systemctl start keepalived
+   35  ip a
+   36  ipvsadm --start-daemon backup --mcast-interface eth1
+   37  ipvsadm -L --daemno
+   38  ipvsadm -L --daemon
+   39  ipvsadm -Lnv
+   40  ipvsadm -Lnc
+   41  ll
+   42  systemctl list-unit-files
+   43  ps aux | grep keep
+   44  ps aux | grep keepalived
+   45  systemctl start keepalived
+   46  ps aux | grep keepalived
+   47  systemctl enable keepalived
+   48  systemctl list-unit-files
+   49  service iptables save
+   50  iptables-save 
+   51  cd /etc/sysconfig/
+   52  ll
+   53  vi iptables-config 
+   54  ll
+   55  iptables-save 
+   56  ll
+   57  sudo yum install iptables-services
+   58  sudo /usr/libexec/iptables/iptables.init save
+   59  sudo iptables -t nat -A PREROUTING -d 192.168.1.200 -j REDIRECT
+   60  sudo /usr/libexec/iptables/iptables.init save
+   61  sudo systemctl enable iptables
+   62  systemctl list-unit-files
+   63  iptables -t nat -L
+   64  sudo iptables -t nat -A PREROUTING -d 192.168.1.200 -j REDIRECT
+   65  iptables -L
+   66  iptables -t nat -L
+   67  iptables -t nat -F
+   68  iptables -F
+   69  sudo iptables -t nat -A PREROUTING -d 192.168.1.200 -j REDIRECT
+   70  sudo iptables -L
+   71  ps aux | grep haproxy
+   72  sudo yum remove iptables-services
+   73  cd /etc/sysconfig/
+   74  ll
+   75  rm -f iptables.rpmsave iptables.save 
+   76  ipvsadm-
+   77  ipvsadm -Lnc
+   78  ps aux | grep vls
+   79  ps aux | grep lvs
+   80  vi /etc/keepalived/keepalived.conf 
+   81  systemctl restart keepalived
+   82  ip a
+   83  systemctl restart keepalived
+   84  ip a
+   85  systemctl restart keepalived
+   86  ip a
+   87  systemctl restart keepalived
+   88  ip a
+   89  systemctl restart keepalived
+   90  ip a
+   91  systemctl restart keepalived
+   92  ip a
+   93  systemctl restart keepalived
+   94  p a
+   95  ip a
+   96  systemctl restart keepalived
+   97  ip a
+   98  systemctl restart keepalived
+   99  ip a
+  100  systemctl restart keepalived
+  101  ip a
+  102  systemctl restart keepalived
+  103  ip a
+  104  vi /etc/keepalived/keepalived.conf 
+  105  systemctl restart keepalived
+  106  ll
+  107  ps aux | grep lvs
+  108  ps aux | grep keepalived
+  109  ipvsadm
+  110  ipvsadm -Lnc
+  111  ipvsadm -L --daemon
+  112  ps aux | grep l
+  113  ps aux | grep ipv
+  114  ps aux | grep lc
+  115  ipvsadm -Lnc
+  116  watch ipvsadm -Lnc
+  117  ip 
+  118  ip a
+  119  systemctl restart keepalived
+  120  ip a
+  121  ps aux | grep keepalived
+  122  cd /vagrant/
+  123  history > history.txt

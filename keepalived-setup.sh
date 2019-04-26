@@ -1,7 +1,7 @@
-G!/bin/bash -eu
+#!/bin/bash -eu
 
-sudo yum clean all
-sudo yum -y install keepalived ipvsadm iproute curl wget tcpdump
+
+sudo apt -y install keepalived
 sudo systemctl enable keepalived
 sudo systemctl start keepalived
 
@@ -17,12 +17,12 @@ sysctl -p
 cat > /etc/keepalived/keepalived.conf <<EOD
 virtual_server 192.168.1.200 80 {
   delay_loop 3
-  lvs_sched rr
-  lvs_method DR
+  lvs_sched wrr
+  lvs_method NAT
   protocol TCP
   sorry_server 192.168.1.13 80
 
-  real_server 192.168.1.21 80 {
+  real_server 192.168.1.11 80 {
     weight 1
     inhibit_on_failure
     TCP_CHECK {
@@ -33,7 +33,7 @@ virtual_server 192.168.1.200 80 {
     }
   }
 
-  real_server 192.168.1.22 80 {
+  real_server 192.168.1.12 80 {
     weight 1
     inhibit_on_failure
     TCP_CHECK {
@@ -46,7 +46,7 @@ virtual_server 192.168.1.200 80 {
 }
 
 vrrp_instance VI_1 {
-  interface eth1
+  interface enp0s8
   state MASTER
   virtual_router_id 51
   priority 11
@@ -56,10 +56,5 @@ vrrp_instance VI_1 {
 }
 EOD
 
+/etc/init.d/keepalived restart
 
-ls -l /tmp/
-sudo cp -r /tmp/keepalived.service.d /etc/systemd/system/
-
-sudo systemctl daemon-reload
-sudo systemctl restart keepalived
-sudo systemctl enable keepalived

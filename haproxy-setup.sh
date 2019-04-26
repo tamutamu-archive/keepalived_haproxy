@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 
-sudo yum clean all
-sudo yum -y install haproxy
+
+sudo apt -y install haproxy
 
 
 # Configure haproxy
@@ -55,12 +55,4 @@ backend webservers
     server web2 192.168.1.12:80 maxconn 32 check
 EOD
 
-
-systemctl restart haproxy
-systemctl enable haproxy
-
-sudo yum -y install iptables-services
-sudo iptables -t nat -A PREROUTING -d 192.168.1.200 -j REDIRECT
-sudo /usr/libexec/iptables/iptables.init save
-
-sudo systemctl enable iptables
+/usr/sbin/service haproxy restart
